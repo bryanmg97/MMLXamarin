@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyMovieListXamarin.Configuration;
+using MyMovieListXamarin.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,11 +9,16 @@ namespace MyMovieListXamarin
 {
     public partial class App : Application
     {
+        private static IoCConfiguration _Locator;
+        public static IoCConfiguration Locator
+        {
+            get { return _Locator = _Locator ?? new IoCConfiguration(); }
+        }
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new LoginView();
         }
 
         protected override void OnStart()

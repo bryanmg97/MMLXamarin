@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MyMovieListXamarin.ViewModels"
+             x:Class="MyMovieListXamarin.Views.ListasView">
+    <ContentPage.BindingContext>
+        <viewmodels:ListasViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView Orientation="Both">
+            <ListView ItemsSource="{Binding Listas}" x:Name="lsvequipos">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Title}"/>
+                            <!--<Image Source="{Binding PosterPath}" Grid.Column="1"/>-->
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

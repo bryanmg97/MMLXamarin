@@ -17,11 +17,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\" />
-    <Folder Include="ViewModels\" />
+    <ProjectReference Include="..\TMDbLib\TMDbLib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TMDbLib\TMDbLib.csproj" />
+    <EmbeddedResource Update="Views\ListasView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LoginView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
